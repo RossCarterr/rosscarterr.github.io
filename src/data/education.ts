@@ -2,9 +2,10 @@ import type { EducationItem } from "@/types/portfolio";
 
 export const education = [
     {
-        title: "title",
-        institution: "institution",
+        title: "BSc (Hons) Computer Games Programming - First Class Honours",
+        institution: "Edge Hill University, 2014 to 2017",
         description:
-            "blah blah blah",
+            "Studied C# and Java programming using Unity, Participated in multiple Games Jam competitions and " +
+            "Winner of Barclays Tech Challenge 2016",
     }
 ] as const satisfies readonly EducationItem[];
