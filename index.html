@@ -1,13 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfoliosite</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f3d3e" />
+  <meta
+          name="description"
+          content="Ross Carter, Senior Software Engineer specialising in Java, Spring Boot, AWS and platform modernisation."
+  />
+  <meta property="og:title" content="Ross Carter | Senior Software Engineer" />
+  <meta
+          property="og:description"
+          content="Senior Software Engineer with hands-on Java, Spring Boot and AWS experience."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rosscarterr.com/" />
+  <link rel="canonical" href="https://rosscarterr.com/" />
+  <link rel="icon" type="image/webp" href="%BASE_URL%pciture.jpg" />
+  <!--
+    This deliberately mirrors the React theme constants so the correct theme
+    is applied before the app loads, preventing a flash of the wrong theme.
+  -->
+  <script>
+    (() => {
+      const storageKey = "portfolio-theme";
+      const lightTheme = "light";
+      const darkTheme = "dark";
+      let savedTheme;
+
+      try {
+        savedTheme = window.localStorage.getItem(storageKey);
+      } catch {
+        savedTheme = null;
+      }
+
+      const theme =
+              savedTheme === lightTheme || savedTheme === darkTheme
+                      ? savedTheme
+                      : window.matchMedia("(prefers-color-scheme: dark)").matches
+                              ? darkTheme
+                              : lightTheme;
+
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <title>Ross Carter | Senior Software Engineer</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<script type="module" src="/src/index.tsx"></script>
+</body>
 </html>

@@ -1,0 +1,77 @@
+.connect-section {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.contact-copy {
+    margin: 0 auto 1.5rem;
+    max-width: 640px;
+}
+
+.grid-flow {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.grid-flow a {
+    align-items: center;
+    background: var(--panel-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    display: flex;
+    font-weight: 800;
+    gap: 0.75rem;
+    height: 56px;
+    justify-content: center;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    width: 56px;
+}
+
+.grid-flow a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.grid-item {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+
+.grid-flow a span {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+@media screen and (min-width: 481px) {
+    .grid-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-flow a {
+        height: auto;
+        min-height: 58px;
+        padding: 1rem;
+        width: auto;
+    }
+
+    .grid-flow a span {
+        clip: auto;
+        clip-path: none;
+        height: auto;
+        overflow: visible;
+        position: static;
+        white-space: normal;
+        width: auto;
+    }
+}

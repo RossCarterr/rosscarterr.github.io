@@ -1,0 +1,112 @@
+.nav-wrapper {
+    width: 100%;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: color-mix(in srgb, var(--background-color) 88%, transparent);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(18px);
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1120px;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    background: var(--panel-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 12px 32px var(--shadow-color);
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    position: absolute;
+    right: 1rem;
+    top: calc(100% + 0.5rem);
+    width: min(280px, calc(100vw - 2rem));
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    align-items: center;
+    color: var(--text-color);
+    border-radius: 6px;
+    display: flex;
+    font-size: 0.95rem;
+    font-weight: 800;
+    min-height: 44px;
+    padding: 0.65rem 0.75rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: var(--background-color);
+    color: var(--primary-color);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-button,
+.menu-button {
+    align-items: center;
+    background: var(--panel-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-flex;
+    height: 44px;
+    justify-content: center;
+    width: 44px;
+}
+
+@media screen and (min-width: 800px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        align-items: center;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        gap: 0.15rem;
+        padding: 0;
+        position: static;
+        width: auto;
+    }
+
+    .menu-button {
+        display: none;
+    }
+}

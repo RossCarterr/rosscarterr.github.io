@@ -1,0 +1,155 @@
+.home-container {
+    width: min(1120px, calc(100% - 2rem));
+    min-height: calc(100vh - 84px);
+    min-height: calc(100svh - 84px);
+    padding-top: 96px;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.home-container::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: min(82%, 560px);
+    transform: translate(-50%, -50%);
+    background:
+            linear-gradient(
+                    90deg,
+                    color-mix(in srgb, var(--primary-color) 13%, transparent),
+                    color-mix(in srgb, var(--primary-color) 7%, transparent)
+            );
+    border-block: 1px solid color-mix(in srgb, var(--primary-color) 12%, transparent);
+}
+
+.home-container .profile {
+    margin-top: 2rem;
+}
+
+.home-container .content {
+    width: 100%;
+    max-width: 680px;
+    min-width: 0;
+}
+
+.hero-intro {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 1.25rem;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+}
+
+.hero-intro span {
+    display: block;
+}
+
+.hero-role {
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-top: 0.45rem;
+    text-transform: uppercase;
+}
+
+.content .home-btn {
+    font-size: 1rem;
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0.85rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 800;
+    border: 1px solid var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    width: min(100%, 220px);
+}
+
+.home-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.content .home-btn.primary {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+}
+
+.profile img {
+    aspect-ratio: 1;
+    border: 6px solid var(--panel-color);
+    border-radius: 50%;
+    box-shadow: 0 20px 50px var(--shadow-color);
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    width: min(260px, 70vw);
+}
+
+/* Medium */
+@media screen and (min-width: 481px) {
+    .hero-intro {
+        font-size: 1.8rem;
+    }
+
+    .content .home-btn {
+        width: auto;
+    }
+
+    .home-actions {
+        flex-direction: row;
+    }
+}
+
+/* Large */
+@media screen and (min-width: 900px) {
+    .home-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        justify-content: space-between;
+        gap: 2.25rem;
+    }
+
+    .home-container::before {
+        height: min(72%, 460px);
+    }
+
+    .home-container .profile {
+        margin-top: 0;
+    }
+
+    .home-container .content {
+        text-align: left;
+    }
+
+    .hero-intro {
+        font-size: 2rem;
+    }
+
+    .home-actions {
+        justify-content: flex-start;
+    }
+}

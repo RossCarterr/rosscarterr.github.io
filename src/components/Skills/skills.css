@@ -1,0 +1,27 @@
+.skills-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-cards {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media screen and (min-width: 760px) {
+    .skills-card {
+        flex: 0 1 calc((100% - 1rem) / 2);
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .skills-card {
+        flex: 0 1 calc((100% - 2rem) / 3);
+    }
+}

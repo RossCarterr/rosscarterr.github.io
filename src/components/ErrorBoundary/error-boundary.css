@@ -1,0 +1,45 @@
+.error-boundary {
+    align-items: center;
+    background: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.error-boundary__content {
+    max-width: 34rem;
+}
+
+.error-boundary h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.error-boundary p {
+    color: var(--muted-color);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.error-boundary button {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    color: var(--background-color);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+}
+
+@media (max-width: 600px) {
+    .error-boundary h1 {
+        font-size: 2.25rem;
+    }
+}
