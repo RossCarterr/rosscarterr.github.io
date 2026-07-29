@@ -1,4 +1,5 @@
 import type { Page } from "@playwright/test";
+import { experience } from "@data/experience";
 import { expect, openPortfolio, test } from "./support/portfolioTest";
 
 const expectNoHorizontalOverflow = async (page: Page) => {
@@ -21,7 +22,7 @@ test("experience content keeps each role summary before its bullet list", async 
     await openPortfolio(page);
 
     const roles = page.locator(".timeline-item");
-    await expect(roles).toHaveCount(3);
+    await expect(roles).toHaveCount(experience.length);
     for (const role of await roles.all()) {
         await expect(role.locator(":scope > div + ul")).toBeVisible();
         await expect(role.getByRole("listitem").first()).toBeVisible();
