@@ -38,7 +38,7 @@ describe("App", () => {
             screen.getByRole("link", { name: "Skip to main content" })
         ).toHaveAttribute("href", "#main-content");
         expect(
-            screen.getByText("Diageo | Nov 2022 to present")
+            screen.getByText("Diageo | Sept 2025 to present")
         ).toBeInTheDocument();
         expect(screen.getByRole("heading", { name: "Skills" })).toBeInTheDocument();
         expect(screen.getByRole("heading", { name: "Impact" })).toBeInTheDocument();
