@@ -2,7 +2,7 @@
 
 [![Build and deploy](https://github.com/RossCarterr/rosscarterr.github.io/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/RossCarterr/rosscarterr.github.io/actions/workflows/deploy.yml)
 
-React portfolio hosted on GitHub Pages and served at [rosscarterr.com](https://rosscarterr.com).
+React portfolio hosted on GitHub Pages and served at [rosscarterr.co.uk](https://rosscarterr.co.uk).
 
 ## Local development
 
