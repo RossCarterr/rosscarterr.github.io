@@ -4,7 +4,7 @@ export const experience  = [
     {
         title: "Technical Lead",
         company: "Diageo",
-        dates: "September 2025 to Present",
+        dates: "Sept 2025 to present",
         highlights: [
             "Lead Java, Spring Boot, and AWS delivery across high-scale consumer platforms.",
             "Architect greenfield internal services supporting marketing teams across the organisation.",
@@ -15,7 +15,7 @@ export const experience  = [
     {
         title: "Senior Software Engineer",
         company: "Diageo",
-        dates: "November 2022 to September 2025",
+        dates: "Nov 2022 to Sept 2025",
         highlights: [
             "Led Java, Spring Boot, and AWS delivery across high-scale consumer platforms.",
             "Modernised services, infrastructure, and delivery practices across internal and supplier teams.",
@@ -26,7 +26,7 @@ export const experience  = [
     {
         title: "Senior Software Engineer",
         company: "Jaguar Land Rover",
-        dates: "October 2020 to November 2022",
+        dates: "Oct 2020 to Nov 2022",
         highlights: [
             "Developed microservices for in-vehicle infotainment systems while maintaining legacy platform services.",
             "Provided production support for critical services, investigating incidents and driving timely resolutions.",
@@ -37,7 +37,7 @@ export const experience  = [
     {
         title: "Software Engineer",
         company: "Qurate Retail Group",
-        dates: "August 2017 to October 2020",
+        dates: "Aug 2017 to Oct 2020",
         highlights: [
             "Developed RESTful APIs and web applications supporting European systems within a global engineering team.",
             "Improved business processes by building and supporting applications in a fast-moving integration environment.",
@@ -45,7 +45,7 @@ export const experience  = [
         ],
     },
     {
-        title: "Games Engineer (Unpaid 2 week internship)",
+        title: "Games Engineer Unpaid Internship",
         company: "BBC",
         dates: "May 2017",
         highlights: [
@@ -57,7 +57,7 @@ export const experience  = [
     {
         title: "Games Developer",
         company: "CyberGaTE",
-        dates: "April 2016 to August 2017",
+        dates: "Apr 2016 to Aug 2017",
         highlights: [
             "Developed an educational cyber security game designed to teach common workplace security risks and prevention strategies.",
             "Created game assets and collaborated with the team to deliver gamified training applications within project timelines.",
