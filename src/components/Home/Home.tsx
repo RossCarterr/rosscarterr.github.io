@@ -34,7 +34,7 @@ const Home = () => {
                 animate="animate"
             >
                 <h1 className="hero-intro">
-                    <span>Hi I'm Ross.</span>
+                    <span>Hi, I'm Ross.</span>
                     {" "}
                     <span className="hero-role">A Lead Software Engineer.</span>
                 </h1>
