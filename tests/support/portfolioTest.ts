@@ -28,7 +28,7 @@ export const test = base.extend<PortfolioFixtures>({
 export const openPortfolio = async (page: Page) => {
     await page.goto(".", { waitUntil: "domcontentloaded" });
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
-        "Hi I'm Ross."
+        "Hi, I'm Ross."
     );
 };
 

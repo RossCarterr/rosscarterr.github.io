@@ -34,9 +34,9 @@ const Home = () => {
                 animate="animate"
             >
                 <h1 className="hero-intro">
-                    <span>Hi I'm Ross.</span>
+                    <span>Hi, I'm Ross.</span>
                     {" "}
-                    <span className="hero-role">A Senior Software Engineer.</span>
+                    <span className="hero-role">A Lead Software Engineer.</span>
                 </h1>
                 <div className="home-actions">
                     <a className="home-btn primary" href="#experience">

@@ -12,6 +12,14 @@ export interface ImpactStory {
     readonly description: string;
 }
 
+export interface Awards {
+    readonly title: string;
+    readonly issuer: string;
+    readonly date: string;
+    readonly description: string;
+    readonly link: string;
+}
+
 export interface ExperienceRole {
     readonly title: string;
     readonly company: string;

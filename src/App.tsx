@@ -7,6 +7,7 @@ import Experience from "@components/Experience/Experience";
 import Education from "@components/Education/Education";
 import Connect from "@components/Connect/Connect";
 import { useTheme } from "@/theme/useTheme";
+import Awards from "@components/Awards/Awards";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -18,13 +19,14 @@ function App() {
         </a>
         <Nav theme={theme} onToggleTheme={toggleTheme} />
         <main id="main-content" tabIndex={-1}>
-          <Home />
-          <About />
-          <Skills />
-          <Experience />
-          <Impact />
-          <Education />
-          <Connect />
+            <Home />
+            <About />
+            <Skills />
+            <Experience />
+            <Impact />
+            <Awards />
+            <Education />
+            <Connect />
         </main>
       </div>
   );

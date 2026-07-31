@@ -28,10 +28,10 @@ describe("App", () => {
     it("renders the core portfolio sections", () => {
         render(<App />);
 
-        expect(screen.getByText("Hi I'm Ross.")).toBeInTheDocument();
-        expect(screen.getByText("A Senior Software Engineer.")).toBeInTheDocument();
+        expect(screen.getByText("Hi, I'm Ross.")).toBeInTheDocument();
+        expect(screen.getByText("A Lead Software Engineer.")).toBeInTheDocument();
         expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-            "Hi I'm Ross. A Senior Software Engineer."
+            "Hi, I'm Ross. A Lead Software Engineer."
         );
         expect(screen.getByRole("main")).toBeInTheDocument();
         expect(
@@ -80,6 +80,7 @@ describe("App", () => {
             "Skills",
             "Experience",
             "Impact",
+            "Awards",
             "Education",
             "Connect",
         ];
