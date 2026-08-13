@@ -13,20 +13,20 @@ const Connect = () => {
                 <p>Open to senior, lead and staff engineering roles.</p>
             </div>
             <div className="grid-flow">
-                <a
-                    href={portfolioLinks.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    title="GitHub"
-                >
-                    <FontAwesomeIcon
-                        icon={faGithub}
-                        className="grid-item"
-                        aria-hidden="true"
-                    />
-                    <span>GitHub</span>
-                </a>
+                {/*<a*/}
+                {/*    href={portfolioLinks.github}*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    aria-label="GitHub"*/}
+                {/*    title="GitHub"*/}
+                {/*>*/}
+                {/*    <FontAwesomeIcon*/}
+                {/*        icon={faGithub}*/}
+                {/*        className="grid-item"*/}
+                {/*        aria-hidden="true"*/}
+                {/*    />*/}
+                {/*    <span>GitHub</span>*/}
+                {/*</a>*/}
                 <a
                     href={portfolioLinks.linkedin}
                     target="_blank"
