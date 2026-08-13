@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { Heading } from "@components/Heading/Heading";
 import { portfolioLinks } from "@data/links";
@@ -13,20 +13,6 @@ const Connect = () => {
                 <p>Open to senior, lead and staff engineering roles.</p>
             </div>
             <div className="grid-flow">
-                {/*<a*/}
-                {/*    href={portfolioLinks.github}*/}
-                {/*    target="_blank"*/}
-                {/*    rel="noopener noreferrer"*/}
-                {/*    aria-label="GitHub"*/}
-                {/*    title="GitHub"*/}
-                {/*>*/}
-                {/*    <FontAwesomeIcon*/}
-                {/*        icon={faGithub}*/}
-                {/*        className="grid-item"*/}
-                {/*        aria-hidden="true"*/}
-                {/*    />*/}
-                {/*    <span>GitHub</span>*/}
-                {/*</a>*/}
                 <a
                     href={portfolioLinks.linkedin}
                     target="_blank"
