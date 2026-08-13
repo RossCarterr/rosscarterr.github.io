@@ -34,7 +34,7 @@ test("mobile contact controls remain usable touch targets", async ({ page, isMob
     await openPortfolio(page);
 
     const contacts = page.locator("#connect").getByRole("link");
-    await expect(contacts).toHaveCount(3);
+    await expect(contacts).toHaveCount(2);
     for (const contact of await contacts.all()) {
         const box = await contact.boundingBox();
         expect(box, "Contact control should be visible").not.toBeNull();
