@@ -28,61 +28,60 @@ const skillCategoryContexts: Record<
     string,
     Array<{ readonly source: string; readonly text: string }>
 > = {
-    "Backend Engineering": [
+    "Backend & Systems": [
         {
-            source: "Technical Lead (Diageo)",
-            text: "Lead Java, Spring Boot, and AWS delivery across high-scale consumer platforms.",
+            source: "Lead Software Engineer (Diageo)",
+            text: "Architect Java 25 & Spring Boot 4 microservices on Amazon ECS with sub-200ms response times.",
         },
         {
-            source: "Connected Devices Impact",
-            text: "Delivered Java, Spring Boot, Lambda, Glue and DynamoDB backend services supporting connected platforms.",
+            source: "Connected Platforms Impact",
+            text: "Delivered Java, Spring Boot, Lambda, Glue, and DynamoDB backend services supporting connected dispensing systems.",
         },
     ],
     "Cloud & DevOps": [
         {
-            source: "Technical Lead (Diageo)",
-            text: "Architected greenfield internal cloud services and modernised delivery infrastructure.",
+            source: "Lead Software Engineer (Diageo)",
+            text: "Architected greenfield cloud-native services with AWS CodePipeline, ECS, and GitLab CI.",
         },
         {
-            source: "Engineering Standards Impact",
-            text: "Built CI/CD pipelines from scratch, added SonarQube quality gates, and automated test coverage.",
+            source: "Engineering Governance Impact",
+            text: "Raised automated test coverage from 0% to over 80% with SonarQube quality gates.",
         },
     ],
-    "Data, Search & AI": [
+    "AI, Machine Learning & Data": [
         {
-            source: "Applied AI Impact",
-            text: "Led the integration of LLMs and AI agents into a global marketing service, transforming insights into smarter recommendations.",
+            source: "Applied AI & Recognition Impact",
+            text: "Engineered award-winning AI marketing products with AWS SageMaker and sub-200ms response times.",
         },
         {
             source: "Personalisation Platform Impact",
-            text: "Scaled taste profiles from 400,000 to more than 70 million, backed by Java services and machine learning endpoints.",
+            text: "Scaled FlavorPrint platform from 400,000 to over 70 million consumer flavour profiles with MongoDB and SageMaker.",
         },
     ],
-    "Frontend & Testing": [
+    "Frontend & Quality Engineering": [
         {
-            source: "Senior Software Engineer (Diageo)",
-            text: "Modernised services and delivery practices, introducing automated unit, integration, and acceptance testing.",
+            source: "Lead Software Engineer (Diageo)",
+            text: "Modernised frontend and full-stack services with TypeScript, React, and Playwright end-to-end testing.",
         },
         {
             source: "Infotainment Microservices (Jaguar Land Rover)",
-            text: "Developed web microservices for in-vehicle infotainment systems with robust test suites.",
+            text: "Developed web microservices for in-vehicle infotainment systems with robust automated test suites.",
         },
     ],
-    "Leadership": [
+    "Engineering Leadership": [
         {
-            source: "Technical Lead (Diageo)",
-            text: "Coordinate internal teams and external partners to align technical delivery with strategic business priorities.",
+            source: "Lead Software Engineer (Diageo)",
+            text: "Champion engineering governance frameworks including Architecture Decision Records (ADRs) and PR reviews.",
         },
         {
-            source: "Engineering Management (Jaguar Land Rover)",
-            text: "Line managed software engineers, supporting career growth, delivery performance, and day-to-day best practices.",
+            source: "Senior Software Engineer (Jaguar Land Rover)",
+            text: "Line managed and mentored four software engineers, driving performance, career growth, and delivery excellence.",
         },
     ],
 };
 
 const Skills = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [viewMode, setViewMode] = useState<"carousel" | "grid">("carousel");
     const carouselRef = useRef<HTMLDivElement>(null);
     const touchStartX = useRef<number | null>(null);
     const touchEndX = useRef<number | null>(null);
@@ -116,15 +115,17 @@ const Skills = () => {
     };
 
     const handleTouchStart = (e: React.TouchEvent) => {
-        if (e.targetTouches[0]) {
-            touchStartX.current = e.targetTouches[0].clientX;
+        const firstTouch = e.targetTouches[0];
+        if (firstTouch) {
+            touchStartX.current = firstTouch.clientX;
         }
         touchEndX.current = null;
     };
 
     const handleTouchMove = (e: React.TouchEvent) => {
-        if (e.targetTouches[0]) {
-            touchEndX.current = e.targetTouches[0].clientX;
+        const firstTouch = e.targetTouches[0];
+        if (firstTouch) {
+            touchEndX.current = firstTouch.clientX;
         }
     };
 
@@ -139,8 +140,6 @@ const Skills = () => {
         touchStartX.current = null;
         touchEndX.current = null;
     };
-
-    if (!currentSkill) return null;
 
     return (
         <section className="section skills-container" id="skills">
@@ -159,7 +158,7 @@ const Skills = () => {
                     onKeyDown={handleKeyDown}
                 >
                     {skills.map((skill, index) => {
-                        const isSelected = activeIndex === index && viewMode === "carousel";
+                        const isSelected = activeIndex === index;
                         return (
                             <button
                                 key={skill.title}
@@ -168,10 +167,7 @@ const Skills = () => {
                                 aria-selected={isSelected}
                                 aria-controls={`skill-panel-${index}`}
                                 className={`skills-tab-button ${isSelected ? "active" : ""}`}
-                                onClick={() => {
-                                    setActiveIndex(index);
-                                    if (viewMode !== "carousel") setViewMode("carousel");
-                                }}
+                                onClick={() => setActiveIndex(index)}
                             >
                                 <FontAwesomeIcon
                                     icon={icons[skill.icon]}

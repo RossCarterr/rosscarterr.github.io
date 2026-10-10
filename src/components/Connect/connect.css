@@ -16,7 +16,8 @@
     justify-content: center;
 }
 
-.grid-flow a {
+.grid-flow a,
+.grid-flow .copy-email-button {
     align-items: center;
     background: var(--panel-color);
     border: 1px solid var(--border-color);
@@ -32,9 +33,12 @@
     text-decoration: none;
     transition: all 0.25s ease;
     width: 56px;
+    cursor: pointer;
+    font-size: 0.95rem;
 }
 
-.grid-flow a:hover {
+.grid-flow a:hover,
+.grid-flow .copy-email-button:hover {
     color: var(--primary-color);
     border-color: var(--primary-color);
     transform: translateY(-3px);
@@ -46,7 +50,8 @@
     font-size: 1.5rem;
 }
 
-.grid-flow a span {
+.grid-flow a span,
+.grid-flow .copy-email-button span {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -59,19 +64,21 @@
 @media screen and (min-width: 481px) {
     .grid-flow {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 500px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 620px;
         margin: 0 auto;
     }
 
-    .grid-flow a {
+    .grid-flow a,
+    .grid-flow .copy-email-button {
         height: auto;
         min-height: 58px;
-        padding: 1rem 1.5rem;
+        padding: 1rem 1.25rem;
         width: auto;
     }
 
-    .grid-flow a span {
+    .grid-flow a span,
+    .grid-flow .copy-email-button span {
         clip: auto;
         clip-path: none;
         height: auto;

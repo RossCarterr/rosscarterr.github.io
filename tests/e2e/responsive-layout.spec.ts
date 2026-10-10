@@ -95,8 +95,8 @@ test("skills carousel supports interactive navigation and slide controls", async
     const carousel = skillsSection.locator(".skills-carousel-container");
     await expect(carousel).toBeVisible();
 
-    // Verify initial slide is Backend Engineering
-    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Backend Engineering");
+    // Verify initial slide is Backend & Systems
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Backend & Systems");
 
     // Click next button
     await carousel.getByRole("button", { name: "Next skill category" }).click();
@@ -105,10 +105,10 @@ test("skills carousel supports interactive navigation and slide controls", async
     // Click tab button directly
     const leadershipTab = skillsSection.getByRole("tab", { name: /Leadership/ });
     await leadershipTab.click();
-    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Leadership");
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Engineering Leadership");
 
     // Keyboard navigation with left arrow from tablist
     await leadershipTab.focus();
     await page.keyboard.press("ArrowLeft");
-    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Frontend & Testing");
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Frontend & Quality Engineering");
 });

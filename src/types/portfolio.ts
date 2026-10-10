@@ -10,6 +10,8 @@ export interface ImpactStory {
     readonly kicker: string;
     readonly title: string;
     readonly description: string;
+    readonly metric?: string;
+    readonly badge?: string;
 }
 
 export interface Awards {

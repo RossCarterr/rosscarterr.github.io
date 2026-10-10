@@ -23,6 +23,11 @@ describe("Home Component", () => {
 
         expect(screen.getByText("Hi, I'm Ross.")).toBeInTheDocument();
         expect(screen.getByText("A Lead Software Engineer.")).toBeInTheDocument();
+        expect(
+            screen.getByText("Specialising in High-Scale & AI Platform Engineering")
+        ).toBeInTheDocument();
+        expect(screen.getByText("10+")).toBeInTheDocument();
+        expect(screen.getByText("70M+")).toBeInTheDocument();
         expect(screen.getByRole("link", { name: /view experience/i })).toHaveAttribute(
             "href",
             "#experience"

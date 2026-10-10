@@ -8,7 +8,12 @@ const Impact = () => {
             <div className="impact-grid">
                 {impactStories.map((story) => (
                     <article className="impact-card" key={story.title}>
-                        <p className="eyebrow">{story.kicker}</p>
+                        <div className="impact-header">
+                            <p className="eyebrow">{story.kicker}</p>
+                            {story.metric && (
+                                <span className="impact-metric-badge">{story.metric}</span>
+                            )}
+                        </div>
                         <h3>{story.title}</h3>
                         <p>{story.description}</p>
                     </article>
