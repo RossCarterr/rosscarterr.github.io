@@ -24,21 +24,21 @@ export default defineConfig({
     ],
   },
   test: {
-    include: ["src/**/*.test.{ts,tsx}"],
+    include: ["tests/unit/**/*.test.{ts,tsx}"],
     environment: "jsdom",
     environmentOptions: {
       jsdom: {
         url: "http://localhost/",
       },
     },
-    setupFiles: "./src/setupTests.ts",
+    setupFiles: "./tests/setup/setupTests.ts",
     globals: true,
     coverage: {
       provider: "v8",
       reporter: ["text", "html"],
       reportsDirectory: "coverage",
       include: ["src/**/*.{ts,tsx}"],
-      exclude: ["src/**/*.test.{ts,tsx}", "src/index.tsx", "src/setupTests.ts"],
+      exclude: ["src/index.tsx"],
       thresholds: {
         statements: 90,
         branches: 90,

@@ -29,8 +29,8 @@ test("experience content keeps each role summary before its bullet list", async 
     }
 });
 
-test("mobile contact controls remain usable touch targets", async ({ page, isMobile }) => {
-    test.skip(!isMobile, "Touch-target sizing is checked at the mobile viewport");
+test("mobile contact controls remain usable touch targets", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
     await openPortfolio(page);
 
     const contacts = page.locator("#connect").getByRole("link");
@@ -43,8 +43,8 @@ test("mobile contact controls remain usable touch targets", async ({ page, isMob
     }
 });
 
-test("mobile layout supports text enlarged to 200 percent", async ({ page, isMobile }) => {
-    test.skip(!isMobile, "Text zoom is checked at the mobile viewport");
+test("mobile layout supports text enlarged to 200 percent", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
     await openPortfolio(page);
 
     await page.addStyleTag({ content: "html { font-size: 200% !important; }" });
@@ -83,4 +83,32 @@ test("navigation uses the desktop layout at the breakpoint without wrapping", as
     );
     expect(Array.from(new Set(linkRows))).toHaveLength(1);
     await expectNoHorizontalOverflow(page);
+});
+
+test("skills carousel supports interactive navigation and slide controls", async ({ page }) => {
+    await openPortfolio(page);
+
+    const skillsSection = page.locator("#skills");
+    await expect(skillsSection).toBeVisible();
+
+    // Verify carousel container and tabs
+    const carousel = skillsSection.locator(".skills-carousel-container");
+    await expect(carousel).toBeVisible();
+
+    // Verify initial slide is Backend Engineering
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Backend Engineering");
+
+    // Click next button
+    await carousel.getByRole("button", { name: "Next skill category" }).click();
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Cloud & DevOps");
+
+    // Click tab button directly
+    const leadershipTab = skillsSection.getByRole("tab", { name: /Leadership/ });
+    await leadershipTab.click();
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Leadership");
+
+    // Keyboard navigation with left arrow from tablist
+    await leadershipTab.focus();
+    await page.keyboard.press("ArrowLeft");
+    await expect(carousel.getByRole("heading", { level: 3 })).toHaveText("Frontend & Testing");
 });
