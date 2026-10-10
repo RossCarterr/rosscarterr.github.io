@@ -33,11 +33,26 @@ const Home = () => {
                 initial={reduceMotion ? false : "initial"}
                 animate="animate"
             >
+                <div className="hero-status-badge">
+                    <span className="status-dot" aria-hidden="true" />
+                    <span>Specialising in High-Scale & AI Platform Engineering</span>
+                </div>
                 <h1 className="hero-intro">
                     <span>Hi, I'm Ross.</span>
                     {" "}
                     <span className="hero-role">A Lead Software Engineer.</span>
                 </h1>
+                <div className="hero-stats">
+                    <div className="hero-stat-pill">
+                        <strong>10+</strong> <span>Years Exp.</span>
+                    </div>
+                    <div className="hero-stat-pill">
+                        <strong>70M+</strong> <span>Profiles Scaled</span>
+                    </div>
+                    <div className="hero-stat-pill">
+                        <strong>&lt;200ms</strong> <span>AI Services</span>
+                    </div>
+                </div>
                 <div className="home-actions">
                     <a className="home-btn primary" href="#experience">
                         View experience

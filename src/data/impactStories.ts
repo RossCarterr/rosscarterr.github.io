@@ -1,28 +1,36 @@
-import type {ImpactStory} from "@/types/portfolio";
+import type { ImpactStory } from "@/types/portfolio";
 
 export const impactStories = [
     {
-        kicker: "Applied AI",
-        title: "Delivered AI-Powered Intelligence for Global Marketing Workflows",
+        kicker: "Personalisation Platform",
+        title: "Scaled FlavorPrint to Over 70 Million Consumer Profiles",
         description:
-            "Led the integration of LLMs and AI agents into a global marketing service, transforming consumer insights into better briefs, smarter recommendations, and reusable content opportunities across marketing teams.",
+            "Architected and expanded Diageo's reusable taste-personalisation platform across whisky, beer, tequila, cocktails and food recommendations, powered by Java, Spring Boot microservices on ECS, MongoDB, and SageMaker.",
+        metric: "70M+",
+        badge: "Scale & Growth",
     },
     {
-        kicker: "Personalisation platform",
-        title: "Scaled taste profiles from 400,000 to more than 70 million",
+        kicker: "Applied AI & Recognition",
+        title: "Delivered Award-Winning AI Marketing & Cocktail Products",
         description:
-            "Expanded a reusable taste-personalisation platform across whisky, beer, tequila and cocktail experiences, backed by Java services, search and machine-learning endpoints.",
+            "Engineered high-volume AI advertising and recommendation services processing millions of daily requests with sub-200ms latency. 'What’s Your Cocktail' won 'Best Use of AI' at the Campaign Tech Awards 2025 and Gold at The Drum Marketing Awards 2025.",
+        metric: "<200ms",
+        badge: "Award-Winning AI",
     },
     {
-        kicker: "Engineering standards",
-        title: "Raised automated test coverage from zero to more than 80%",
+        kicker: "Engineering Governance",
+        title: "Raised Automated Test Coverage from Zero to Over 80%",
         description:
-            "Established pull request review processes, built CI/CD pipelines from scratch, added SonarQube quality gates, and introduced ADRs plus automated unit, integration and acceptance testing across a portfolio of services.",
+            "Established engineering standards, ADRs, PR review processes, automated CI/CD pipelines, and SonarQube quality gates across multiple team portfolios, drastically boosting release confidence and maintainability.",
+        metric: "80%+",
+        badge: "Quality Engineering",
     },
     {
-        kicker: "Connected devices",
-        title: "Built backend services for reusable-keg and dispenser data",
+        kicker: "Connected Platforms",
+        title: "Cloud-Native Backend for Connected Dispenser Systems",
         description:
-            "Delivered Java, Spring Boot, Lambda, Glue and DynamoDB services supporting a mobile app and connected drinks-dispensing platform used by bars.",
+            "Delivered Java, Spring Boot, AWS Lambda, AWS Glue, and DynamoDB services supporting real-time data pipelines and mobile experiences for smart bar dispensers and reusable kegs.",
+        metric: "Cloud-Native",
+        badge: "IoT & Distributed Systems",
     },
 ] as const satisfies readonly ImpactStory[];

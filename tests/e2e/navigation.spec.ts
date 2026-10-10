@@ -29,11 +29,8 @@ test("Experience precedes Impact in the page and navigation", async ({ page }) =
 
 test(
     "desktop navigation opens every portfolio section",
-    async ({ page, isMobile }) => {
-        test.skip(
-            isMobile,
-            "Desktop navigation is covered by the mobile disclosure test"
-        );
+    async ({ page }) => {
+        await page.setViewportSize({ width: 1440, height: 1000 });
         await openPortfolio(page);
         const navigation = page.getByRole("navigation", {
             name: "Primary navigation",
@@ -48,8 +45,8 @@ test(
 
 test(
     "mobile navigation behaves as an accessible disclosure",
-    async ({ page, isMobile }) => {
-        test.skip(!isMobile, "The navigation disclosure is only displayed on mobile");
+    async ({ page }) => {
+        await page.setViewportSize({ width: 390, height: 900 });
         await openPortfolio(page);
 
         const openButton = page.getByRole("button", { name: "Open navigation" });

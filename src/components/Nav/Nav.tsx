@@ -18,9 +18,42 @@ interface NavProps {
 
 const Nav = ({ theme, onToggleTheme }: NavProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState<string>("");
     const firstNavigationLink = useRef<HTMLAnchorElement>(null);
     const menuButton = useRef<HTMLButtonElement>(null);
     const restoreMenuButtonFocus = useRef(false);
+
+    useEffect(() => {
+        const sectionIds = ["home", ...navigationItems.map(({ href }) => href.substring(1))];
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visibleEntries = entries.filter((e) => e.isIntersecting);
+                if (visibleEntries.length > 0) {
+                    const topEntry = visibleEntries.sort(
+                        (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+                    )[0];
+                    if (topEntry?.target.id) {
+                        setActiveSection(
+                            topEntry.target.id === "home" ? "" : `#${topEntry.target.id}`
+                        );
+                    }
+                }
+            },
+            {
+                rootMargin: "-20% 0px -60% 0px",
+                threshold: [0, 0.2, 0.5],
+            }
+        );
+
+        for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el) {
+                observer.observe(el);
+            }
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         if (!menuOpen) {
@@ -69,6 +102,7 @@ const Nav = ({ theme, onToggleTheme }: NavProps) => {
                         <a
                             key={href}
                             href={href}
+                            className={activeSection === href ? "active" : ""}
                             onClick={closeMenu}
                             ref={index === 0 ? firstNavigationLink : undefined}
                         >
