@@ -6,8 +6,8 @@ const About = () => {
             <Heading text="About" />
             <div className="section-panel">
                 <p>
-                    I’m a Lead Software Engineer with over 10 years of experience and a passion for Java Spring Boot, backend development,
-                    and artificial intelligence. I enjoy building scalable systems, integrating intelligent
+                    I’m a Senior Software Engineer with over 10 years of experience, including technical leadership, specialising in Java Spring Boot,
+                    backend development, and artificial intelligence. I enjoy building scalable systems, integrating intelligent
                     technologies, and creating solutions that are both reliable and impactful.
                 </p>
                 <p>
