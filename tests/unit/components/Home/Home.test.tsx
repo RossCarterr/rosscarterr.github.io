@@ -22,7 +22,7 @@ describe("Home Component", () => {
         render(<Home />);
 
         expect(screen.getByText("Hi, I'm Ross.")).toBeInTheDocument();
-        expect(screen.getByText("A Lead Software Engineer.")).toBeInTheDocument();
+        expect(screen.getByText("A Senior Software Engineer.")).toBeInTheDocument();
         expect(
             screen.getByText("Specialising in High-Scale & AI Platform Engineering")
         ).toBeInTheDocument();
