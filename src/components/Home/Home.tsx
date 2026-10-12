@@ -40,7 +40,7 @@ const Home = () => {
                 <h1 className="hero-intro">
                     <span>Hi, I'm Ross.</span>
                     {" "}
-                    <span className="hero-role">A Lead Software Engineer.</span>
+                    <span className="hero-role">A Senior Software Engineer.</span>
                 </h1>
                 <div className="hero-stats">
                     <div className="hero-stat-pill">
