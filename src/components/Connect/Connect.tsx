@@ -26,7 +26,7 @@ const Connect = () => {
         <section className="section connect-section" id="connect">
             <Heading text="Connect" />
             <div className="contact-copy">
-                <p>Open to senior, lead and staff engineering roles.</p>
+                <p>Open to senior, lead engineering roles.</p>
             </div>
             <div className="grid-flow">
                 <a
